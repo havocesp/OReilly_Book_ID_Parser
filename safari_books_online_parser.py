@@ -5,13 +5,12 @@ Created on Mon Jul 30 19:59:03 2018
 
 @author: Raleigh Littles
 """
-
-import requests
 import re
+from security import safe_requests
 
 
 def retrieve_page_contents(url):
-    r = requests.get(url)
+    r = safe_requests.get(url)
     if r.status_code < 300:
         return (r.content.decode())
     
