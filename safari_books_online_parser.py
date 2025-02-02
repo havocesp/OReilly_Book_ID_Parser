@@ -11,7 +11,7 @@ import re
 
 
 def retrieve_page_contents(url):
-    r = requests.get(url)
+    r = requests.get(url, timeout=60)
     if r.status_code < 300:
         return (r.content.decode())
     
